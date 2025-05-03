@@ -1,0 +1,79 @@
+/* 
+base.css
+    + size of the popup/extension
+    + banner (imageplus) text
+*/
+/* General Styling */
+body {
+    margin: 0;
+    overflow: hidden;    
+    min-width: 350px;
+    min-height: 400px;
+    height: auto;
+    color: #333;
+    font-family: Tahoma, sans-serif;
+    background-color: #fafafa;
+
+    padding-top: 60px;
+    max-width: 100%;
+}
+
+/*hide scrollwheel*/
+body::-webkit-scrollbar {
+    display: none;
+    overflow: hidden;
+}
+
+/* Banner */
+.banner {
+    background-color: rgb(53, 53, 255);
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-color: rgb(33, 33, 37);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.banner h1 {
+    margin: 0;
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 2px 5px black;
+}
+
+/* Banner image */
+.banner img {
+    width: 38px;
+    height: 38px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.ImageSelection_Hover {
+    outline: 3px rgba(206, 142, 134, 0.8) solid !important;
+    color: rgba(210, 108, 48, 0.706) !important;
+    box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.5) !important;
+    transition: outline 0.2s ease, box-shadow 0.2s ease;
+    cursor: crosshair !important;
+    z-index: 9999 !important;
+}
+
+.ImageSelection_Fullscreen {
+    overflow: auto;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

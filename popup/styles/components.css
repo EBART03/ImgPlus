@@ -1,0 +1,132 @@
+/* components.css
+    + Buttons
+    + Search
+    + Dropdown
+    + Tags */
+
+/* Search Bar */
+.topnav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px; 
+    position: relative;
+    z-index: 50; 
+    background-color: rgb(248, 244, 244);
+
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0 ,0 ,0.3);
+}
+
+.topnav .wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    overflow: visible !important;
+}
+
+.topnav input[type="text"] {
+    width: 100%;
+    min-width: 90%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(232, 227, 227);
+    height: 40px;
+    font-size: 14px;
+}
+
+
+#create-tag-btn,
+#refresh-search {
+    height: 40px;
+    width: min(60px, 20%);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0 ,0 ,0.3);
+}
+
+/* Search Bar Buttons */
+#create-tag-btn {
+    margin-left: 5px;
+}
+
+#refresh-search {
+    margin-right: 20px;
+}
+
+/* Tag Display */
+.search-tag {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+/* Dropdown Styling */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: 100;
+    display: none;
+
+    border-radius: 5px;
+}
+
+/* Ensure dropdown is visible when active */
+.dropdown-menu.show {
+    display: block;
+    opacity: 0.8;
+    z-index: 100;
+}
+
+/* Prevent dropdown from being clipped */
+.wrapper {
+    overflow: visible !important;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: #d9d8d8;
+}
+
+/* Delete Tag Button */
+.delete-tag-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 2px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.delete-tag-btn:hover {
+    background: darkred;
+}

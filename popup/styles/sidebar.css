@@ -1,0 +1,156 @@
+/* Sidebar */
+.sidebar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+
+    width: 200px;
+    padding: 10px;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: left 0.3s;
+    color: white;
+    z-index: 90;
+    overflow-y: auto;
+}
+
+/* Ensure sidebar opens properly */
+.sidebar.open {
+    display: flex;
+    animation: slide-in 2s;
+}
+
+/* Sidebar buttons */
+.sidebar button {
+    margin-bottom: 8px;
+    padding: 6px;
+    font-size: 0.9rem;
+    display: block;
+    background: none;
+    color: rgba(255, 255, 255, 0.962);
+    border: 5px;
+    outline: 1px solid rgba(255, 255, 255, 0.962);
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: #212020;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    margin-top: 8px;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+.sidebar-toggle:hover {
+    border: rgb(245, 241, 241) solid 1px;
+    background-color: rgb(48, 48, 253);
+}
+
+/* analyticsBtn */
+#analytics-btn {
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#analytics-dropdown,
+#instructions-dropdown {
+    font-size: 0.85rem;
+    color: #ddd;
+    display: none;
+    margin: 0px;
+    background-color: #5c5c5c;
+}
+
+#analytics-dropdown p {
+    margin: 4px 0;
+    padding: 0 10px;
+}
+
+/* extensions */
+#extension-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+    justify-content: space-between;
+}
+
+#extension-actions .extension-action {
+    flex: 1;
+    padding: 8px;
+    font-size: 0.9rem;
+    border: none;
+    background-color: #555;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* pop-out */
+#popout-btn img, 
+#open-tab-btn img,
+#analytics-btn img,
+#export-btn img,
+#import-btn img,
+#login-btn img,
+#logout-btn img,
+#create-account-toggle img,
+#sync-btn img,
+#instructions-btn img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 6px;
+    filter: brightness(0) invert(1);
+}
+
+#submit-login,
+#submit-create-account {
+    background-color: #424040;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#submit-login:hover,
+#submit-create-account:hover {
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 90%;
+    padding: 5px 8px;
+    margin: 1px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    background-color: #fff;
+}

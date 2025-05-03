@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<!--Image Plus Extensionn HTML-->
+<!--display.html-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Plus</title>
+    <link rel="stylesheet" href="display.css">
+    <script type="module" src="../scripts/Images_F.js" defer></script>
+    <script type="module" src="../scripts/Tags_F.js" defer></script>
+    <script type="module" src="../scripts/SearchFilter_F.js" defer></script>
+    <script type="module" src="../scripts/Main_F.js" defer></script>
+    <script type="module" src="../scripts/content.js" defer></script>
+    <script type="module" src="../scripts/auth.js" defer></script>
+    <script type="module" src="../scripts/util.js" defer></script>
+
+</head>
+<body>
+    <div class="banner">
+        <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        <h1><img src="../images/Icon.png"> Image Plus</h1>
+    </div>
+
+    <!-- Sidebar Container -->
+    <!--Login Container Dropdown-->
+    <div class="sidebar" id="sidebar">
+        <div class="dropdown">
+            <button id="login-btn" title  = "For logging into the ImagePlus account."><img src="../images/login.svg">Login</button>
+            <div id ="login-form" class="dropdown-content" style="display: none;"> 
+                <input type="text" id="username" placeholder="Username" required/>
+                <input type="password" id="password" placeholder="Password" required/>
+                <button id="submit-login">Submit</button>
+            </div>
+        </div>
+
+        <!--Create Account Container Dropdown-->
+
+        <div class="dropdown">
+            <button id="create-account-toggle" title  = "For creating a new ImagePlus account."><img src="../images/add-user.svg">Create Account</button>
+            <div id ="create-account" class="dropdown-content" style="display: none;"> 
+                <form id="create-account-form">
+                    <input type="text" id="create-username" placeholder="Username" required/>
+                    <input type="password" id="create-password" placeholder="Password" required/>
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" required/>
+                    <button id="submit-create-account">Submit</button>
+                </form> 
+            </div>
+        </div>
+        <p id ="response-msg" style="margin: 5px 10px; font-weight: bold; color: gray;"></p>
+        
+        <button id="logout-btn" title  = "For logging out of the ImagePlus account."><img src="../images/logout.svg">Logout</button>
+        <p id ="login-status" style="margin: 5px 10px; font-weight: bold; color: gray;"></p>
+        <button id="export-btn" title = "For exporting the complete Image and Tag JSON."><img src="../images/export.svg">Export</button>
+
+        <input type = "file" id="importFile" multiple accept=".json,image/*" style="display: none;">
+        <button id="import-btn" title  = "For importing an Image or JSON TagImage file."><img src="../images/import.svg">Import</button>
+        <button id="analytics-btn" title  = "For displaying Analytics.">
+            <img src="../images/statistics.svg">Analytics</button>
+        <div id="analytics-dropdown">
+            <p id="imageCount">Images: Count</p>
+            <p id="tagCount">Tags: Count</p>
+        </div>
+        <div id="extensions-actions">
+            <button id="popout-btn" class="extension-action" title  = "To open a Popout of the Extension."><img src="../images/pop-out.svg">Popout</button>
+            <button id="open-tab-btn" class="extension-action" title  = "To open a New Window."><img src="../images/new-tab.svg">New Tab</button>
+        </div>
+        <button id="sync-btn" title="Sync Cloud to Local and Vice Versa."><img src="../images/sync.svg">Sync</button>
+
+        <button id="instructions-btn" title  = "For displaying Instructions.">
+            <img src="../images/menu.svg">Instructions</button>
+        <div id="instructions-dropdown">
+            <div id="instructions">
+                <strong>To Save Images</strong>
+                <p>
+                    <ol>
+                        <li>Right Click on the Image</li>
+                        <li>Select the "Save Image in ImagePlus"</li>
+                    </ol>
+                </p>
+                <strong>To Add Tags</strong>
+                <p>
+                    <ol>
+                        <li>Click on the "+" button</li>
+                        <li>Enter the tag name</li>
+                        <li>Click "Add Tag"</li>
+                        <li>Click "Cancel" to close the popup</li>
+                    </ol>
+                </p>
+                <strong>To Add Tags to Images</strong>
+                <p>
+                    <ol>
+                        <li>Click on the image</li>
+                        <li>Select the tag from the dropdown</li>
+                        <li>Click "Add Tag"</li>
+                        <li>Click "Cancel" to close the popup</li>
+                        <li>Multiple tags can be added to the same image</li>
+                    </ol>
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--Search and Tag Containers-->
+    <div class="topnav"> 
+        <button id="create-tag-btn" title  = "Add additional Tags.">+</button> <!-- Left -->
+        <div class="wrapper"> <!-- Center -->
+            <input type="text" placeholder=" Search" id="search-bar" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"> 
+            <div id="tag-dropdown" class="dropdown-menu"></div>
+        </div>
+        <button id="refresh-search" title  = "Refresh the Image Gallery.">↻</button> <!-- Right -->
+    </div>
+
+    <!--Image Gallery Containers-->
+    <div class="container">
+        <div id="image-gallery" class="gallery-container"></div>
+    </div>
+    
+    <!-- Tag Creation Popup -->
+    <div id="tag-popup" class="popup">
+        <h3>Create a New Tag</h3>
+        <input type="text" id="new-tag-input" placeholder="Enter tag...">
+        <div class="popup-buttons">
+            <button id="add-tag-btn">Add Tag</button>
+            <button id="cancel-tag-btn">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Confirm Popup -->
+    <div id="confirm-popup" class="popup" style="display: none;">
+        <h3>Are you sure?</h3>
+        <p>This will delete the image permanately.</p>
+        <div class="popup-buttons">
+            <button id="confirm-yes-btn">Yes</button>
+            <button id="confirm-no-btn">No</button>
+        </div>
+    </div>
+
+</body>
+</html>
